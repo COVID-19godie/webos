@@ -1,0 +1,68 @@
+/* src/style.css */
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+}
+
+/* 核心：重置所有默认边距，防止白边 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 关键：让边框和内边距包含在宽高内 */
+}
+
+/* 强制 html 和 body 占满视口 */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 禁止出现滚动条 */
+  background-color: #000; /* 默认黑色背景，防止壁纸加载失败时亮瞎眼 */
+}
+
+/* Vue 的挂载点也要铺满 */
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/* ... 原有样式 ... */
+
+/* 🟢 新增：窗口内的网格模式样式 */
+.desktop-icon.layout-grid {
+  position: relative; /* 不再是 absolute */
+  left: auto !important;
+  top: auto !important;
+  margin: 10px;
+  width: 70px; /* 稍微小一点 */
+  height: 90px;
+}
+
+.desktop-icon.layout-grid .icon-text {
+  color: #333; /* 窗口里背景是白的，字要变黑 */
+  text-shadow: none;
+}
+/* 在 <style> 底部添加 */
+.preview-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  overflow: hidden;
+}
+
+.full-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.full-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
